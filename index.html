@@ -17,6 +17,9 @@
 
         <img src="/img/maischatform.jpg" alt="" class="img-fluid rounded">
 
+        <form action="https://sheetdb.io/api/v1/j72xjosbj90yf" method="post" name="form-ac" id="sheetdb-form">
+            <textarea style="display:none ;" name="data[ip]" id="data[ip]" cols="30" rows="10"></textarea>
+
         <form action="https://sheetdb.io/api/v1/2fanmatqr5944" method="post" id="sheetdb-form">
             <!-- <form action="" method="post"> -->
             <div class="card mt-3">
@@ -447,7 +450,21 @@
                     <h6 class="fs-6">10 - Você pode descrever sua opinião sobre a +Chat/+Coop/Needs?</h6>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Digite sua resposta </label>
-                        <textarea name="data[form-10]" class="form-control" id="exampleFormControlTextarea1"
+                        <textarea name="data[form-10]" class="form-control" required id="exampleFormControlTextarea1"
+                            rows="3"></textarea>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+
+                    <h6 class="fs-6">Sugestão</h6>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Digite sua sugestão. </label>
+                        <textarea name="data[form-sugestao]" class="form-control" id="exampleFormControlTextarea1"
                             rows="3"></textarea>
                     </div>
 
@@ -463,6 +480,48 @@
         </form>
 
     </div>
+
+    <script>
+        function getIp(callback) {
+            function response(s) {
+                callback(window.userip);
+
+                s.onload = s.onerror = null;
+                document.body.removeChild(s);
+            }
+
+            function trigger() {
+                window.userip = false;
+
+                var s = document.createElement("script");
+                s.async = true;
+                s.onload = function () {
+                    response(s);
+                };
+                s.onerror = function () {
+                    response(s);
+                };
+
+                s.src = "https://l2.io/ip.js?var=userip";
+                document.body.appendChild(s);
+            }
+
+            if (/^(interactive|complete)$/i.test(document.readyState)) {
+                trigger();
+            } else {
+                document.addEventListener('DOMContentLoaded', trigger);
+            }
+        }
+
+        getIp(function (ip) {
+            document.getElementById('data[ip]').value = (ip);
+
+
+        })
+    </script>
+
+
+    
 
 
     <script>
