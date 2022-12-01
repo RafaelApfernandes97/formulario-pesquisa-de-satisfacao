@@ -1,0 +1,23 @@
+{
+  "name": "formulario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "address.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelApfernandes97/formulario-pesquisa-de-satisfacao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelApfernandes97/formulario-pesquisa-de-satisfacao/issues"
+  },
+  "homepage": "https://github.com/RafaelApfernandes97/formulario-pesquisa-de-satisfacao#readme",
+  "dependencies": {
+    "address": "^1.2.1"
+  }
+}

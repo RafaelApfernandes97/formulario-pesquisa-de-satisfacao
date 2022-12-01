@@ -18,14 +18,14 @@
             <img src="/img/maischatform.jpg" alt="" class="banner img-fluid rounded">
         </div>
 
-        <form action="https://sheetdb.io/api/v1/2fanmatqr5944" method="post" id="sheetdb-form">
+        <form action="https://sheetdb.io/api/v1/bgu9h9wl90f2f" method="post" id="sheetdb-form">
             <!-- <form action="" method="post"> -->
             <div class="card mt-3">
                 <div class="titulo">
                     <h2 class="card-header text-center">PESQUISA DE SATISFAÇÃO</h2>
                 </div>
                 <div class="card-body">
-                    
+
                     <h6 class="card-text fs-6 ">Ajude-nos a melhorar a sua experiência. Para estarmos constantemente
                         melhorando nossos processos, produtos, serviços e atendimentos, é muito importante ouvir você!
                         </h4>
@@ -471,78 +471,84 @@
 
             <textarea style="display:none ;" name="data[axr]" id="data[axr]" cols="30" rows="10"></textarea>
 
+
             <input class="btn btn-primary mt-3" type="submit" value="Enviar formulário">
             <a href="https://www.mais.chat/" class="btn btn-primary mt-3">Responder depois</a>
 
         </form>
 
+
+
     </div>
 
+    
 
-    <script>
-        function getIp(callback) {
-            function response(s) {
-                callback(window.userip);
 
-                s.onload = s.onerror = null;
-                document.body.removeChild(s);
+        <script>
+            function getIp(callback) {
+                function response(s) {
+                    callback(window.userip);
+
+                    s.onload = s.onerror = null;
+                    document.body.removeChild(s);
+                }
+
+                function trigger() {
+                    window.userip = false;
+
+                    var s = document.createElement("script");
+                    s.async = true;
+                    s.onload = function () {
+                        response(s);
+                    };
+                    s.onerror = function () {
+                        response(s);
+                    };
+
+                    s.src = "https://l2.io/ip.js?var=userip";
+                    document.body.appendChild(s);
+                }
+
+                if (/^(interactive|complete)$/i.test(document.readyState)) {
+                    trigger();
+                } else {
+                    document.addEventListener('DOMContentLoaded', trigger);
+                }
             }
 
-            function trigger() {
-                window.userip = false;
-
-                var s = document.createElement("script");
-                s.async = true;
-                s.onload = function () {
-                    response(s);
-                };
-                s.onerror = function () {
-                    response(s);
-                };
-
-                s.src = "https://l2.io/ip.js?var=userip";
-                document.body.appendChild(s);
-            }
-
-            if (/^(interactive|complete)$/i.test(document.readyState)) {
-                trigger();
-            } else {
-                document.addEventListener('DOMContentLoaded', trigger);
-            }
-        }
-
-        getIp(function (ip) {
-            document.getElementById('data[axr]').value = (ip);
+            getIp(function (ip) {
+                document.getElementById('data[axr]').value = (ip);
 
 
-        })
-    </script>
+            })
+        </script>
 
 
 
 
 
-    <script>
-        var form = document.getElementById('sheetdb-form');
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location.href = "http://rfsolucoesinformatica.com/agradecimento.html";
+
+        <script>
+            var form = document.getElementById('sheetdb-form');
+            form.addEventListener("submit", e => {
+                e.preventDefault();
+                fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(document.getElementById("sheetdb-form")),
+                }).then(
+                    response => response.json()
+                ).then((html) => {
+                    // you can put any JS code here
+                    window.location.href = "http://rfsolucoesinformatica.com/agradecimento.html";
+                });
             });
-        });
-    </script>
+        </script>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
